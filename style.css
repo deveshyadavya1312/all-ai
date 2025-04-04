@@ -1,88 +1,152 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap');
 
 * {
-    padding: 0;
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-html,
-body {
-    height: 100%;
-    width: 100%;
-}
-
-body {
-
+.container {
+    background-color: rgb(0, 0, 0);
+    /* background-image: url(img/1.gif);
+    background-position: center;
+    filter: opacity(90%);
+    background-repeat: no-repeat;
+background-size: cover; */
     width: 100vw;
     height: 100vh;
+    border: 2px solid rgb(0, 255, 242);
+    font-family: "Protest Guerrilla", serif;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    background-image: url('./Leonardo_Phoenix_A_visually_captivating_hightech_background_fo_3.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative;
-    overflow: hidden;
-}
-
-.container {
-    padding: 40px;
-    position: absolute;
-    left: 20%;
-    background-color: rgba(0, 0, 0, 0.6);
-    border-radius: 10px;
-    width: 40%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    gap: 10px;
 }
 
-h1 {
-    font-size: 35px;
-    font-family: "Roboto";
+#bot {
 
+    width: 300px;
+    margin-top: 10%;
+    /* position: absolute; */
+    /* box-shadow: 2px 2px 200px blue; */
+    filter: contrast(2);
 }
 
-p {
-    color: orange;
-    font-size: 18px;
+.chatbot {
+    animation-name: bot;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    position: relative;
+    transition: 1s ease-in-out;
+    margin-bottom: 20px;
 }
 
-.btn {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 1.2em;
-    cursor: pointer;
-    color: #fff;
-    background-color: #4CAF50;
-    border: none;
-    border-radius: 5px;
-    transition: background-color 0.2s;
-}
-
-.btn:hover {
-    background-color: #45a049;
-}
-
-.listening {
-    animation: pulse 1s infinite;
-    background-color: #FF6347;
-}
-
-@keyframes pulse {
+@keyframes bot {
     0% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.1);
+        filter: drop-shadow(2px 2px 100px rgb(255, 153, 0));
+        top: 20px;
     }
 
     100% {
-        transform: scale(1);
+        filter: drop-shadow(2px 2px 100px rgb(0, 183, 255));
+        top: 2px;
+    }
+}
+
+h1 {
+    color: white;
+    font-size: 25px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande';
+}
+
+#title {
+    color: rgb(255, 154, 3);
+    font-size: 30px;
+    font-family: "Protest Guerrilla", serif;
+    letter-spacing: 2px;
+}
+
+#subTitle {
+    color: rgb(63, 178, 255);
+    font-size: 30px;
+    font-family: "Protest Guerrilla", serif;
+    letter-spacing: 2px;
+}
+
+#voice {
+    margin-top: 1px;
+    /* border: 2px solid red; */
+    width: 200px;
+    display: none;
+}
+
+#btn {
+    width: 20%;
+    background: linear-gradient(to right, #f48403, rgb(1, 213, 255), #f3d021);
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    text-shadow: -1px -2px rgba(247, 195, 8, 0.886), 1px 2px rgba(0, 0, 0, 0.525);
+    gap: 20px;
+    padding: 5px;
+    /* padding-right: 50px; */
+    border-radius: 50px;
+    transition: all 3s ease-in-out;
+    border: none;
+    /* outline: 2px solid red; */
+    box-shadow: 2px 2px 10px rgb(255, 0, 157), -2px -2px 10px yellow;
+    cursor: pointer;
+}
+
+#mic {
+    background-color: rgb(255, 174, 0);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    box-shadow: 1px 1px 10px white, -1px -1px 10px white;
+}
+
+#btn:hover {
+    /* outline: 2px solid red; */
+    box-shadow: 2px 2px 10000px rgb(255, 157, 0);
+    letter-spacing: 1px;
+}
+
+#mic:hover {
+    /* outline: 2px solid red; */
+    box-shadow: 2px 2px 100px rgb(241, 225, 225);
+
+}
+
+#bot {
+    backdrop-filter: 2px 2px 20px red;
+}
+
+@media (max-width:799px) {
+    #btn {
+        font-size: 20px;
+        width: 50%;
+    }
+}
+
+@media (max-width:450px) {
+    #btn {
+        font-size: 25px;
+        width: 71%;
+    }
+
+    h1 {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
     }
 }
